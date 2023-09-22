@@ -16,4 +16,13 @@ function fn(){
 }
 fn();
 
-// 
+const numberRegExp = /\d+/;
+// `numberRegExp`の正規表現が文字列"123"にマッチするかをテストする
+console.log(numberRegExp.test("123"));
+
+// べき乗演算子( ** )
+console.log(2 ** 4);
+
+// べき乗演算子( ** )　Math.powメソッド
+console.log(Math.pow(2, 4));
+ 
