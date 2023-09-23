@@ -25,4 +25,16 @@ console.log(2 ** 4);
 
 // べき乗演算子( ** )　Math.powメソッド
 console.log(Math.pow(2, 4));
- 
+
+const a = 1;
+const b = 2;
+const c = 3;
+console.log(a + b * c);
+console.log((a + b) * c);
+
+// 三項演算子
+// 条件式 ? Trueの時処理する式 : Falseの時処理する式
+const valueA = true ? "A" : "B";
+console.log(valueA);
+const valueB = false ? "A" : "B";
+console.log(valueB);
