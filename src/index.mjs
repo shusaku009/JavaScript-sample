@@ -38,3 +38,53 @@ const valueA = true ? "A" : "B";
 console.log(valueA);
 const valueB = false ? "A" : "B";
 console.log(valueB);
+
+// NaN
+Number({});
+
+const x = 10;
+const y = x + NaN;
+const z = y + 20;
+console.log(x);
+console.log(y);
+console.log(z);
+
+// NaNはnumber型
+console.log(typeof NaN);
+
+function isNaN(x) {
+    // NaNは自分自身と一致しない
+    return x !== x;
+}
+console.log(isNaN(1));
+console.log(isNaN("str"));
+console.log(isNaN({}));
+console.log(isNaN([]));
+console.log(isNaN(NaN));
+
+Number.isNaN(NaN);
+
+// 任意の個数の数値を受け取り、その合計値を返す関数
+function sum(...values) {
+    return values.reduce((total, value) => {
+        return total + value;
+    }, 0);
+}
+const x = 1, z = 10;
+let y;
+console.log(sum(x, y, z));
+
+sum(1, undefined, 10);
+// 計算中にNaNとなるため、最終結果もNaNになる
+1 + undefined;
+NaN + 10;
+
+function sum(...values) {
+    return values.reduce((total, value) => {
+        // `valueをNumberで明示的に数値へ変換してから加算する`
+        return total + Number(value);
+    }, 0)
+}
+const x = 1, z = 10;
+let y;
+console.log(sum(x, y, z));
