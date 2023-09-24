@@ -129,3 +129,44 @@ function echo(x) {
 
 console.log(echo(1));
 console.log(echo());
+
+// ES2015で導入されたデフォルト引数
+function echo(x = 'デフォルト値') {
+    return x;
+}
+
+console.log(echo(1));
+console.log(echo());
+
+// OR演算子を使ったデフォルト演算子
+function addPrefix(text, prefix) {
+    const pre = prefix || "デフォルト:";
+    return pre + text;
+}
+
+console.log(addPrefix("文字列"));
+console.log(addPrefix("文字列", "カスタム:"));
+
+// falsyな値を渡すとデフォルト値が入ってしまう
+function addPrefix(text, prefix) {
+    const pre = prefix || "デフォルト:";
+    return pre + text;
+}
+
+console.log(addPrefix("文字列"));
+console.log(addPrefix("文字列", ""));
+console.log(addPrefix("文字列", "カスタム:"));
+
+function addPrefix(text, prefix = "デフォルト:") {
+    return prefix + text;
+}
+// falsyな値を渡してもデフォルト値は代入されない
+console.log(addPrefix("文字列"));
+console.log(addPrefix("文字列", ""));
+console.log(addPrefix("文字列", "カスタム:"));
+
+function add(x, y) {
+    return x + y;
+}
+add(1, 3);
+add(1, 3, 5);
