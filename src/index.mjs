@@ -289,3 +289,40 @@ const fn = (x, y) => {
     return `最後の関数 x: ${x}, y: ${y}`;
 };
 
+const  array = [1, 2, 3];
+const output = (value) => {
+    console.log(value);
+};
+array.forEach(output);
+
+const array = [1, 2, 3];
+array.forEach((value) => {
+    console.log(value);
+});
+
+const obj = {
+    method1: function() {
+        // `function`キーワードでのメソッド
+    },
+    method2: () => {
+        // Arrow  Functionでのメソッド
+    }
+};
+
+const obj = {};
+obj.method = function() {
+};
+
+const obj = {
+    method: function() {
+        return "this is method";
+    }
+};
+console.log(obj.method());
+
+const obj = {
+    method() {
+        return "this is method";
+    }
+};
+console.log(obj.method());
