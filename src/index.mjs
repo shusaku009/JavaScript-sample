@@ -259,3 +259,16 @@ const factorial = function innerFact(n) {
     return n * innerFact(n - 1);
 };
 console.log(factorial(3));
+
+const array = [1, 2, 3];
+// 1,2,3と順番に値が渡されてコールバック関数（無名関数）が処理する
+const doubleArray = array.map(function(value) {
+    return value * 2; //  返した値をまとめた配列ができる
+});
+console.log(doubleArray);
+
+const array = [1, 2, 3];
+// 仮引数が1つなので`()`を省略できる
+// 関数の処理が1つの式なので`return`分を省略できる
+const doubleArray = array.map(value => value * 2);
+console.log(doubleArray);
