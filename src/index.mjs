@@ -186,3 +186,58 @@ function fn(arg1, ...restArgs) {
     console.log(restArgs);
 }
 fn("a", "b", "c");
+
+function fn(x, y, z) {
+    console.log(x);
+    console.log(y);
+    console.log(z);
+}
+const array = [1, 2, 3];
+// Spread構文で配列を引数に展開して関数を呼び出す
+fn(...array);
+// 次のように書いたのと同じ意味
+fn(array[0], array[1], array[2]);
+
+function fn() {
+    // `arguments`はインデックス関数を指定して各要素にアクセスできる
+    console.log(arguments[0]);
+    console.log(arguments[1]);
+    console.log(arguments[2]);
+}
+fn("a", "b", "c");
+
+function printUserId(user) {
+    console.log(user.id);
+}
+const user = {
+    id: 42
+};
+printUserId(user);
+
+// 第1引数のオブジェクトから`id`プロパティを変数`id`として定義する
+function printUserId( { id }) {
+    console.log(id);
+}
+const user = {
+    id: 42
+};
+printUserId(user);
+
+const user = {
+    id: 42
+};
+// オブジェクトの分割代入
+const { id } = user;
+console.log(id);
+// 関数の引数の分割代入
+function printUserId({ id }) {
+    console.log(id);
+}
+printUserId(user);
+
+function print([first, second]) {
+    console.log(first);
+    console.log(second);
+}
+const array = [1, 2];
+print(array);
