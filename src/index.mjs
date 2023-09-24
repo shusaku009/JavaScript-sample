@@ -170,3 +170,19 @@ function add(x, y) {
 }
 add(1, 3);
 add(1, 3, 5);
+
+// Math.maxは可変長引数を受け取る関数
+const max = Math.max(1, 5, 10, 20);
+console.log(max);
+
+function fn(...args) {
+    // argsは、渡された引数が入った配列
+    console.log(args);
+}
+fn("a", "b", "c");
+
+function fn(arg1, ...restArgs) {
+    console.log(arg1);
+    console.log(restArgs);
+}
+fn("a", "b", "c");
