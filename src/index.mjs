@@ -109,3 +109,23 @@ let y;
 console.log(x, y, z);
 console.log(sum(x, y, z));
 
+// 関数宣言
+function double(num) {
+    return num * 2;
+}
+// `double`関数の返り値は、`num`に`10`を入れて`return`文で返した値
+console.log(double(10));
+
+function fn() {
+    // 何も返り値を指定していない場合は`undefined`を返す
+    return;
+    // すでにreturnされているため、この行は実行されない
+}
+console.log(fn());
+
+function echo(x) {
+    return x;
+}
+
+console.log(echo(1));
+console.log(echo());
