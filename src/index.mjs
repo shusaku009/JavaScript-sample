@@ -326,3 +326,35 @@ const obj = {
     }
 };
 console.log(obj.method());
+
+// 1という式の評価値を表示
+console.log(1);
+// 1 + 1という式の評価値を表示
+console.log(1 + 1);
+// 式の評価値を変数に代入
+const total = 1 + 1;
+// 関数式の評価値(関数オブジェクト)を変数に代入
+const fn = function() {
+    return 1;
+};
+// fn()という評価値を表示
+console.log(fn());
+
+const isTrue = true;
+// isTrueという式がif文の中に出てくる
+if (isTrue) {
+}
+
+// if文とブロック文の組み合わせ
+if(true) {
+    console.log("文1");
+    console.log("文2");
+}
+
+// ブロックで終わらない文なので、セミコロンが必要
+if(true) console.log(true);
+// ブロックで終わる文なので、セミコロンが不要
+if(true) {
+    console.log(true);
+}
+
