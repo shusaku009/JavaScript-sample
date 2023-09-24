@@ -241,3 +241,10 @@ function print([first, second]) {
 }
 const array = [1, 2];
 print(array);
+
+function fn() {
+    console.log("fnが呼び出されました");
+}
+// 関数`fn`を`Func`変数に代入している
+const myFunc = fn;
+myFunc();
