@@ -520,3 +520,26 @@ function isEvenIncluded(numbers) {
 }
 const numbers = [1, 5, 10, 15, 20];
 console.log(isEvenIncluded(numbers));
+
+function isEven(num) {
+    return num % 2 === 0;
+}
+const numbers = [1, 5, 10, 15, 20];
+console.log(numbers.some(isEven));
+
+function isEven(num) {
+    return num % 2 === 0;
+}
+function filterEven(numbers) {
+    const results = [];
+    for (let i = 0; i < numbers.length; i++) {
+        const num = numbers[i];
+        if (!isEven(num)) {
+            continue;
+        }
+        results.push(num);
+    }
+    return results;
+}
+const array = [1, 5, 10, 15, 20];
+console.log(filterEven(array));
