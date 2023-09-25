@@ -657,3 +657,32 @@ const languages = {
 const { ja, en } = languages;
 console.log(ja);
 console.log(en);
+
+const obj = {};
+obj.key = "value";
+console.log(obj.key);
+
+const key = "key-string";
+const obj = {};
+obj[key] = "value of key";
+console.log(obj[key]);
+
+const key = "key-string";
+const obj = {
+    [key]: "value"
+};
+console.log(obj[key]);
+
+function changeProperty(obj) {
+    obj.key = "value";
+}
+const obj = {};
+changeProperty(obj);
+console.log(obj.key);
+
+const obj = {
+    key1: "value1",
+    key2: "value2"
+};
+delete obj.key1;
+console.log(obj);
