@@ -577,3 +577,14 @@ for (const num in numbers) {
     total += num;
 }
 console.log(total);
+
+const array = [1, 2, 3];
+for (const value of array) {
+    console.log(value);
+}
+
+const str = "吉野家";
+for (const value of str) {
+    console.log(value);
+}
+
