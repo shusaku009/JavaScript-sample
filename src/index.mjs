@@ -727,3 +727,16 @@ const obj = {key: undefined };
 if ("key" in obj) {
     console.log("`key`プロパティは存在する");
 }
+
+const obj = {};
+Object.hasOwn(obj, "プロパティ名");
+
+const obj = { key: undefined };
+if (Object.hasOwn(obj, "key")) {
+    console.log("`obj`は`key`プロパティを持っている");
+}
+
+const obj = { key: undefined };
+if (obj.hasOwnProperty("key")) {
+    console.log("`obj`は`key`プロパティを持っている");
+}
