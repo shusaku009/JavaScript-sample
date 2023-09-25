@@ -551,3 +551,29 @@ function isEven(num) {
 const array = [1, 5, 10, 15, 20];
 console.log(array.filter(isEven));
 
+const obj = {
+    "a": 1,
+    "b": 2,
+    "c": 3
+};
+for (const key in obj) {
+    const value = obj[key];
+    console.log(`key:${key}, value:${value}`);
+}
+
+const obj = {
+    "a": 1,
+    "b": 2,
+    "c": 3
+};
+Object.keys(obj).forEach(key => {
+    const value = obj[key];
+    console.log(`key:${key}, value:${value}`);
+});
+
+const numbers = [5, 10];
+let total = 0;
+for (const num in numbers) {
+    total += num;
+}
+console.log(total);
