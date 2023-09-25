@@ -740,3 +740,56 @@ const obj = { key: undefined };
 if (obj.hasOwnProperty("key")) {
     console.log("`obj`は`key`プロパティを持っている");
 }
+
+function printWidgetTitle(widget) {
+    if (widget.window !== undefined && widget.window.title !== undefined) {
+        console.log(`ウィジェットのタイトルは${widget.window.title}です`);
+    } else {
+        console.log("ウィジェットのタイトルは未定義です");
+    }
+}
+printWidgetTitle({
+    window: {
+        title: "Book Viewer"
+    }
+});
+printWidgetTitle({
+
+});
+
+const obj = {
+    a: {
+        b: "objのaプロパティのbプロパティ"
+    }
+};
+console.log(obj?.a?.b);
+console.log(obj?.notFound?.notFound);
+console.log(undefined?.notFound.notFound);
+console.log(null?.notFound.notFound);
+
+function printWidgetTitle(widget) {
+    const title = widget?.window?.title ?? "未定義";
+    console.log(`ウィジェットのタイトルは${title}です`);
+}
+printWidgetTitle({
+    window: {
+        title: "Book Viewer"
+    }
+});
+printWidgetTitle({
+
+});
+
+const languages = {
+    ja: {
+        hello: "こんにちは！"
+    },
+    en: {
+        hello: "Hello!"
+    }
+};
+const langJapanese = "ja";
+const langKorean = "ko";
+const messageKey = "hello";
+console.log(languages?.[langJapanese]?.[messageKey]);
+console.log(languages?.[langKorean]?.[messageKey]);
