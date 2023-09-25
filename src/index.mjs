@@ -588,3 +588,31 @@ for (const value of str) {
     console.log(value);
 }
 
+const obj = {
+    "key": "value"
+};
+
+const obj = {
+    key: "value"
+};
+
+const color = {
+    red: "red",
+    green: "green",
+    blue: "blue"
+};
+
+const name = "名前";
+const obj = {
+    name: name
+};
+console.log(obj);
+
+const name = "名前";
+const obj = {
+    name
+};
+console.log(obj);
+
+const obj = new Object();
+console.log(obj);
