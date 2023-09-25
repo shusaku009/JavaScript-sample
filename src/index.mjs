@@ -463,3 +463,18 @@ function sum(numbers) {
 }
 
 console.log(sum([1, 2, 3, 4, 5]));
+
+const array = [1, 2, 3];
+array.forEach(currentValue => {
+    console.log(currentValue);
+});
+
+function sum(numbers) {
+    let total = 0;
+    numbers.forEach(num => {
+        total += num;
+    });
+    return total;
+}
+
+sum([1, 2, 3, 4, 5]);
