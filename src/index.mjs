@@ -793,3 +793,14 @@ const langKorean = "ko";
 const messageKey = "hello";
 console.log(languages?.[langJapanese]?.[messageKey]);
 console.log(languages?.[langKorean]?.[messageKey]);
+
+const obj = { key: "value" };
+console.log(obj.toString());
+console.log(String(obj));
+
+const customObject = {
+    toString() {
+        return "custom value";
+    }
+};
+console.log(String(customObject));
