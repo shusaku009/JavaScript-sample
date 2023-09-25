@@ -686,3 +686,44 @@ const obj = {
 };
 delete obj.key1;
 console.log(obj);
+
+const obj = { key: "value" };
+obj.key = "Hi!";
+console.log(obj.key);
+
+const obj = { key: "value" };
+obj = {};
+
+"use strict";
+const object = Object.freeze({ key: "value "});
+object.key = "value";
+
+const obj = {};
+console.log(obj.notFound);
+
+const widget = {
+    window: {
+        title: "ウィジェットのタイトル"
+    }
+};
+console.log(widget.windw)
+console.log(widget.windw.title);
+
+const obj = {
+    key: "value"
+};
+if (obj.key !== undefined) {
+    console.log("`keyプロパティの値は`undefinedではない`");
+}
+
+const obj = {
+    key: undefined
+};
+if (obj.key !== undefined) {
+
+}
+
+const obj = {key: undefined };
+if ("key" in obj) {
+    console.log("`key`プロパティは存在する");
+}
