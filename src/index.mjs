@@ -358,3 +358,10 @@ if(true) {
     console.log(true);
 }
 
+// learn関数を宣言する関数宣言文
+function learn() {
+}
+// 関数式をread変数を代入
+const read = function() {
+};
+
