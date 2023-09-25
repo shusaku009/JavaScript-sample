@@ -478,3 +478,45 @@ function sum(numbers) {
 }
 
 sum([1, 2, 3, 4, 5]);
+
+const numbers = [1, 5, 10, 15, 20];
+let isEvenIncluded = false;
+for (let i = 0; i < numbers.length; i++) {
+    const num = numbers[i];
+    if (num % 2 === 0) {
+        isEvenIncluded = true;
+        break;
+    }
+}
+console.log(isEvenIncluded);
+
+function isEven(num) {
+    return num % 2 === 0;
+}
+function isEvenIncluded(numbers) {
+    for (let i = 0; i < numbers.length; i++) {
+        const num = numbers[i];
+        if (isEven(num)) {
+            isEvenIncluded = true;
+            break;
+        }
+    }
+    return isEvenIncluded;
+}
+const array = [1, 5, 10, 15, 20];
+console.log(isEvenIncluded(array));
+
+function isEven(num) {
+    return num % 2 === 0;
+}
+function isEvenIncluded(numbers) {
+    for (let i = 0; i < numbers.length; i++) {
+        const num = numbers[i];
+        if (isEven(num)) {
+            return true;
+        }
+    }
+    return false;
+}
+const numbers = [1, 5, 10, 15, 20];
+console.log(isEvenIncluded(numbers));
