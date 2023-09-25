@@ -804,3 +804,56 @@ const customObject = {
     }
 };
 console.log(String(customObject));
+
+const obj = {};
+const keyObject1 = { a: 1 };
+const keyObject2 = { b: 2 };
+obj[keyObject1] = "1";
+obj[keyObject2] = "2";
+console.log(obj);
+
+const obj = {};
+const symbolKey1 = Symbol("シンボル1");
+const symbolKey2 = Symbol("シンボル2");
+obj[symbolKey1] = "1";
+obj[symbolKey2] = "2";
+console.log(obj[symbolKey1]);
+console.log(obj[symbolKey2]);
+
+const obj = {
+    "one": 1,
+    "two": 2,
+    "three": 3
+};
+console.log(Object.keys(obj));
+console.log(Object.values(obj));
+console.log(Object.entries(obj));
+
+const obj = {
+    "one": 1,
+    "two": 2,
+    "three": 3
+};
+const keys = Object.keys(obj);
+keys.forEach(key => {
+    console.log(key);
+});
+
+const obj = Object.assign(target, ...sources);
+
+const objectA = { a: "a" };
+const objectB = { b: "b" };
+const merged = Object.assign({}, objectA, objectB);
+console.log(merged);
+
+const objectA = { a: "a" };
+const objectB = { b: "b" };
+const merged = Object.assign(objectA, objectB);
+console.log(merged);
+console.log(objectA);
+console.log(merged === objectA);
+
+const objectA = { version: "a" };
+const objectB = { version: "b" };
+const merged = Object.assign({}, objectA, objectB);
+console.log(merged);
