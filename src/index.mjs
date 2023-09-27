@@ -919,3 +919,9 @@ const obj = {};
 console.log(obj.toString());
 
 console.log(typeof Object.prototype.toString);
+
+const obj = {
+    "key": "value"
+};
+console.log(obj.toString === Object.prototype.toString);
+console.log(obj.toString());
