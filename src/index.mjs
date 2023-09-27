@@ -914,3 +914,6 @@ const obj = {
 };
 const cloneObj = deepClone(obj);
 console.log(cloneObj.nest === obj.nest);
+
+const obj = {};
+console.log(obj.toString());
