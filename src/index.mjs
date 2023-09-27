@@ -857,3 +857,60 @@ const objectA = { version: "a" };
 const objectB = { version: "b" };
 const merged = Object.assign({}, objectA, objectB);
 console.log(merged);
+
+const objectA = { a: "a" };
+const objectB = { b: "b" };
+const merged = {
+    ...objectA,
+    ...objectB
+};
+console.log(merged);
+
+// `version`のプロパティ名が被っている
+const objectA = { version: "a" };
+const objectB = { version: "b" };
+const merged = {
+    ...objectA,
+    ...objectB,
+    other: "other"
+};
+console.log(merged);
+
+const shallowClone = (obj) => {
+    return Object.assign({}, obj);
+};
+const obj = { a: "a" };
+const cloneObj = shallowClone(obj);
+console.log(cloneObj);
+console.log(obj === cloneObj);
+
+const shallowClone = (obj) => {
+    return Object.assign({}, obj);
+};
+const obj = {
+    level: 1,
+    nest: {
+        level: 2
+    },
+};
+const cloneObj = shallowClone(obj);
+console.log(cloneObj.nest === obj.nest);
+
+const shallowClone = (obj) => {
+    return Object.assign({}, obj);
+};
+function deepClone(obj) {
+    const newObj = shallowClone(obj);
+    Object.keys(newObj)
+        .filter(k => typeof newObj [k] === "object")
+        .forEach(k => newObj [k] = deepClone(newObj [k]));
+    return newObj;
+}
+const obj = {
+    level: 1,
+    nest: {
+        level: 2
+    }
+};
+const cloneObj = deepClone(obj);
+console.log(cloneObj.nest === obj.nest);
