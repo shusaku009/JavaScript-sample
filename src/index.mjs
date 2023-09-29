@@ -958,3 +958,18 @@ console.log(array.hasOwnProperty === Object.prototype.hasOwnProperty);
 
 const numbers = [1, 2, 3];
 console.log(numbers.toString());
+
+const obj = Object.create(null);
+console.log(obj.hasOwnProperty);
+
+const obj = {};
+console.log(obj["toString"]);
+const mapLike = Object.create(null);
+console.log(mapLike["toString"]);
+
+const mapLike = Object.create(null);
+console.log(mapLike.hasOwnProperty("key"));
+
+const mapLike = Object.create(null);
+console.log(Object.hasOwn(mapLike, "key"));
+
