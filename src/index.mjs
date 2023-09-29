@@ -1024,3 +1024,6 @@ console.log(Array.isArray(array));
 
 const array = [];
 console.log(typeof array);
+
+const typedArray = new Int8Array(8);
+console.log(Array.isArray(typedArray));
