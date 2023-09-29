@@ -1027,3 +1027,9 @@ console.log(typeof array);
 
 const typedArray = new Int8Array(8);
 console.log(Array.isArray(typedArray));
+
+const array = ["one", "two", "three"];
+const [first, second, third] = array
+console.log(first);
+console.log(second);
+console.log(third);
