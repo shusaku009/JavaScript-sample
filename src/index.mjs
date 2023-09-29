@@ -1016,3 +1016,11 @@ console.log(array[array.length - 1]);
 
 const array = ["a", "b", "c"];
 console.log(array[-1]);
+
+const obj = {};
+const array = [];
+console.log(Array.isArray(obj));
+console.log(Array.isArray(array));
+
+const array = [];
+console.log(typeof array);
