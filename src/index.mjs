@@ -944,3 +944,17 @@ const obj = {
 };
 console.log(Object.hasOwn(obj, "toString"));
 console.log("toString" in obj);
+
+const obj = Object.create(Object.prototype);
+console.log(obj.toString === Object.prototype.toString);
+
+const Array = function() {};
+Array.prototype = Object.create(Object.prototype);
+const array = Object.create(Array.prototype);
+console.log(array.hasOwnProperty === Object.prototype.hasOwnProperty);
+
+const array = [];
+console.log(array.hasOwnProperty === Object.prototype.hasOwnProperty);
+
+const numbers = [1, 2, 3];
+console.log(numbers.toString());
