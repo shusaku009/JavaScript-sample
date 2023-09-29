@@ -925,3 +925,22 @@ const obj = {
 };
 console.log(obj.toString === Object.prototype.toString);
 console.log(obj.toString());
+
+const customObject = {
+    toString() {
+        return "custom value";
+    }
+};
+console.log(customObject.toString());
+
+const obj = {};
+console.log(Object.hasOwn(obj, "toString"));
+console.log("toString" in obj);
+
+const obj = {
+    toString() {
+        return "custom value";
+    }
+};
+console.log(Object.hasOwn(obj, "toString"));
+console.log("toString" in obj);
