@@ -1033,3 +1033,14 @@ const [first, second, third] = array
 console.log(first);
 console.log(second);
 console.log(third);
+
+const denseArray = [1, undefined, 3];
+const sparseArray = [1, , 3];
+console.log(denseArray[1]);
+console.log(sparseArray[1]);
+
+const denseArray = [1, undefined, 3];
+const sparseArray = [1, , 3];
+console.log(Object.hasOwn(denseArray, 1));
+console.log(Object.hasOwn(sparseArray, 1));
+
