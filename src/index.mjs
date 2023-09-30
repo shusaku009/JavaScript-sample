@@ -1088,3 +1088,34 @@ console.log(firstRecordIndex);
 console.log(records[firstRecordIndex]);
 console.log(lastRecordIndex);
 console.log(records[lastRecordIndex]);
+
+const colors = [
+    { "color": "red"},
+    { "color": "green"},
+    { "color": "blue"}
+];
+const blueCoolor = colors.find((obj) => {
+    return obj.color === "blue";
+});
+console.log(blueColor);
+const whiteColor = colors.find((obj) => {
+    return obj.color === "white";
+});
+console.log(whiteColor);
+
+const records = [
+    { date: "2020/12/1", count: 5 },
+    { date: "2020/12/2", count: 11 },
+    { date: "2020/12/3", count: 9 },
+    { date: "2020/12/4", count: 12 },
+    { date: "2020/12/5", count: 3 }
+];
+const firstRecord = records.findIndex((record) => {
+    return record.count > 10;
+});
+const lastRecord = records.findLastIndex((record) => {
+    return record.count > 10;
+});
+console.log(firstRecord);
+console.log(lastRecord);
+
