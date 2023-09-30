@@ -1313,3 +1313,11 @@ function myFunc() {
     });
 }
 myFunc("a", "b", "c");
+
+const array = ["a"].concat("b").concat("c");
+console.log(array);
+
+const abArray = ["a"].concat("b");
+console.log(abArray);
+const abcArray = abArray.concat("c");
+console.log(abcArray);
