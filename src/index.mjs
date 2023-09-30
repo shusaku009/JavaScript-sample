@@ -1359,3 +1359,15 @@ console.log(str.at(0));
 console.log(str.at(1));
 console.log(str.at(2));
 console.log(str.at(-1));
+
+const str = "アオイ";
+console.log(str.charCodeAt(0).toString(16));
+console.log(str.charCodeAt(1).toString(16));
+console.log(str.charCodeAt(2).toString(16));
+
+const str = String.fromCharCode(
+    0x30a2,
+    0x30aa,
+    0x30a4
+);
+console.log(str);
