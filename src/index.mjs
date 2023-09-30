@@ -1119,3 +1119,9 @@ const lastRecord = records.findLastIndex((record) => {
 console.log(firstRecord);
 console.log(lastRecord);
 
+const array = ["A", "B", "C", "D", "E"];
+console.log(array.slice(1, 4));
+console.log(array.slice(1));
+console.log(array.slice(-1));
+console.log(array.slice(1, 1));
+console.log(array.slice(4,1));
