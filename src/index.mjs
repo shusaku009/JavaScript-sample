@@ -1203,3 +1203,49 @@ console.log(array.length);
 const array = [1, 2, 3];
 array.length = 0;
 console.log(array);
+
+let array = [1, 2, 3];
+console.log(array.length);
+array = [];
+console.log(array.length);
+
+const array = [1, 2, 3];
+console.log(array.length);
+array = [];
+
+const myArray = ["A", "B", "C"];
+const result = myArray.push("D");
+console.log(result);
+console.log(myArray);
+
+const myArray = ["A", "B", "C"];
+const newArray = myArray.concat("D");
+console.log(newArray);
+console.log(myArray)
+console.log(myArray === newArray);
+
+function removeAtIndex(array, index) {
+    const copiedArray = array.slice();
+    copiedArray.splice(index, 1);
+    return copiedArray;
+}
+const array = ["A", "B", "C"];
+const newArray = removeAtIndex(array, 1);
+console.log(newArray);
+console.log(array);
+
+const array = ["A", "B", "C"];
+const newArray = array.toSpliced(1, 1);
+console.log(newArray);
+console.log(array);
+
+function removeAtIndex(array, index) {
+    return array.toSpliced(index, 1);
+}
+const array = ["A", "B", "C"];
+const newArray = removeAtIndex(array, 1);
+console.log(newArray);
+console.log(array);
+
+const array = ["A", "B", "C"];
+const newArray = array.with(1, "")
