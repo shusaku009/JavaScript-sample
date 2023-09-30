@@ -1044,3 +1044,47 @@ const sparseArray = [1, , 3];
 console.log(Object.hasOwn(denseArray, 1));
 console.log(Object.hasOwn(sparseArray, 1));
 
+const array = ["Java", "JavaScript", "Ruby", "JavaScript"];
+const indexOfJS = array.indexOf("JavaScript");
+console.log(indexOfJS);
+const lastIndexOfJS = array.lastIndexOf("JavaScript");
+console.log(lastIndexOfJS);
+console.log(array[indexOfJS]);
+console.log(array[lastIndexOfJS]);
+console.log(array.indexOf("JS"));
+console.log(array.lastIndexOf("JS"));
+
+const obj = { key: "value"};
+const array = ["A", "B", obj];
+console.log(array.indexOf({ key: "value" }));
+console.log(obj === { key: "value" });
+console.log(array.indexOf(obj));
+
+const colors = [
+    { "color": "red" },
+    { "color": "green" },
+    { "color": "blue" }
+];
+const indexOfBlue = colors.findIndex((obj) => {
+    return obj.color === "blue";
+});
+console.log(indexOfBlue);
+console.log(colors[indexOfBlue]);
+
+const records = [
+    { date: "2020/12/1", count: 5 },
+    { date: "2020/12/2", count: 11 },
+    { date: "2020/12/3", count: 9 },
+    { date: "2020/12/4", count: 12 },
+    { date: "2020/12/5", count: 3 }
+];
+const firstRecordIndex = records.findIndex((record) => {
+    return record.count > 10;
+});
+const lastRecordIndex = records.findLastIndex((record) => {
+    return record.count > 10;
+});
+console.log(firstRecordIndex);
+console.log(records[firstRecordIndex]);
+console.log(lastRecordIndex);
+console.log(records[lastRecordIndex]);
