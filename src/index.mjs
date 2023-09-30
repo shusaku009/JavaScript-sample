@@ -1436,3 +1436,8 @@ console.log(str.endsWith("いる"));
 console.log(str.includes("にわ"));
 console.log(str.includes("いる"));
 
+const patternA = /パターン/フラグ;
+const patternB = new RegExp("パターン文字列", "フラグ");
+
+const pattern = /a+/;
+const pattern = new RegExp("a+");
