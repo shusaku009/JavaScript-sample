@@ -1336,3 +1336,26 @@ const versionNames = ECMAScriptVersions
     .filter(ECMAScript => ECMAScript.year <= 2000)
     .map(ECMAScript => ECMAScript.name);
 console.log(versionNames);
+
+const str = "This book is \"js-primer\"";
+console.log(str);
+
+const str = "a" + "b"
+console.log(str);
+
+const name = "JavaScript";
+console.log("Hello " + name + "!");
+
+const str = "文字列"
+console.log(str[0]);
+console.log(str[1]);
+console.log(str[2]);
+
+const str = "文字列";
+console.log(str[42]);
+
+const str = "文字列"
+console.log(str.at(0));
+console.log(str.at(1));
+console.log(str.at(2));
+console.log(str.at(-1));
