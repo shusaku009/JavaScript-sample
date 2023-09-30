@@ -1442,9 +1442,10 @@ const patternB = new RegExp("パターン文字列", "フラグ");
 const pattern = /a+/;
 const pattern = new RegExp("a+");
 
-function main() {
-    const invalidPattern = /[/;
-}
+// function main() {
+//     // `[`は対となる`]`を組み合わせる特殊文字であるため、単独で書けない
+//     const invalidPattern = /[/;
+// }
 
 function main() {
     const invalidPattern = new RegExp("[");
@@ -1460,10 +1461,10 @@ const str = "ABC123EFG";
 const searchPattern = /\d{3}/;
 console.log(str.search(searchPattern));
 
-const str = "abc123def";
-const searchPattern = /\d+/;
-cosnt index = str.search(searchPattern);
-str.slice(index, index + マッチした文字列の長さ);
+// const str = "abc123def";
+// const searchPattern = /\d+/;
+// cosnt index = str.search(searchPattern);
+// str.slice(index, index + マッチした文字列の長さ);
 
 console.log("文字列".match(/マッチしないパターン/));
 
@@ -1489,4 +1490,15 @@ const alphabetsPattern = /[a-zA-Z]+/g;
 const matchesIterator = str.matchAll(alphabetsPattern);
 for (const match of matchesIterator) {
     console.log(`match: "${match[0]}", index: ${match.index}, input: "${match.input}"`);
+}
+
+const pattern = /ECMAScript (\d+)/;
+const [all, capture1] = "ECMAScript 6".match(pattern);
+console.log(all);
+console.log(capture1);
+
+const pattern = /ES(\d+)/g;
+const matchesIterator = "ES2015、ES2016、ES2017".matchAll(pattern);
+for (const match of matchesIterator) {
+    console.log(`match: "${match[0]}", capture1: ${match[1]}, index: ${match.index}, input: "${match.input}"`);
 }
