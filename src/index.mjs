@@ -1441,3 +1441,17 @@ const patternB = new RegExp("パターン文字列", "フラグ");
 
 const pattern = /a+/;
 const pattern = new RegExp("a+");
+
+function main() {
+    const invalidPattern = /[/;
+}
+
+function main() {
+    const invalidPattern = new RegExp("[");
+}
+main();
+
+const pattern = /\s{3}/;
+
+const spaceCount = 3;
+const pattern = new RegExp(`\\s{${spaceCount}}`);
