@@ -1248,4 +1248,10 @@ console.log(newArray);
 console.log(array);
 
 const array = ["A", "B", "C"];
-const newArray = array.with(1, "")
+const newArray = array.with(1, "B2");
+console.log(newArray);
+
+const array = [1, 2, 3];
+array.forEach((curerntValue, index, array) => {
+    console.log(curerntValue, index, array);
+});
