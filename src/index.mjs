@@ -1187,3 +1187,16 @@ console.log(array.flat(Infinity));
 
 const array = ["A", "B", "C"];
 console.log(array.flat());
+
+const array = [];
+array.splice(インデックス, 削除する要素数);
+array.splice(インデックス, 削除する要素数, ...追加する要素数);
+
+const array = ["a", "b", "c"];
+array.splice(1, 1);
+console.log(array);
+console.log(array.length);
+console.log(array[1]);
+array.splice(0, array.length);
+console.log(array.length);
+
