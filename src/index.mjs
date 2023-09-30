@@ -1381,3 +1381,35 @@ console.log(str);
 const str = "a b c d";
 const strings = str.split(/\s+/);
 console.log(strings);
+
+console.log("文字列".length);
+
+console.log("".length);
+
+console.log("文字列" === "文字列");
+console.log("JS" === "ES");
+console.log("文字列" === "文字");
+
+console.log("A".charCodeAt(0));
+console.log("B".charCodeAt(0));
+console.log("A" > "B");
+console.log("ABC" > "ABD");
+
+const str = "ABCDE";
+console.log(str.slice(1));
+console.log(str.slice(1, 5));
+console.log(str.slice(-1));
+console.log(str.slice(1, 4));
+console.log(str.slice(4, 1));
+
+const str = "ABCDE";
+console.log(str.substring(1));
+console.log(str.substring(1, 5));
+console.log(str.substring(-1));
+console.log(str.substring(1, 4));
+console.log(str.substring(4, 1));
+
+const url = "https://example.com?param=1";
+const indexOfQuery = url.indexOf("?");
+const queryString = url.slice(indexOfQuery);
+console.log(queryString);
