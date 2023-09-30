@@ -1178,3 +1178,12 @@ console.log(newArrayConcat)
 const array = ["A", "B", "C"];
 const newArray = ["X", ...array, "Z"];
 console.log(newArray);
+
+const array = [[["A"], "B"], "C"];
+console.log(array.flat());
+console.log(array.flat(1));
+console.log(array.flat(2));
+console.log(array.flat(Infinity));
+
+const array = ["A", "B", "C"];
+console.log(array.flat());
