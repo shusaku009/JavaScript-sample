@@ -1255,3 +1255,10 @@ const array = [1, 2, 3];
 array.forEach((curerntValue, index, array) => {
     console.log(curerntValue, index, array);
 });
+
+const array = [1, 2, 3];
+const newArray = array.map((currentValue, index, array) => {
+    return currentValue * 10;
+});
+console.log(newArray);
+console.log(array === newArray);
