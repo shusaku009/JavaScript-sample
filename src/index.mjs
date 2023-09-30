@@ -1413,3 +1413,26 @@ const url = "https://example.com?param=1";
 const indexOfQuery = url.indexOf("?");
 const queryString = url.slice(indexOfQuery);
 console.log(queryString);
+
+const str = "にわにはにわにわとりがいる";
+console.log(str.indexOf("にわ"));
+console.log(str.lastIndexOf("にわ"));
+console.log(str.indexOf("未知のキーワード"));
+
+const str = "JavaScript";
+const searchWorld = "Script";
+const index = str.indexOf(searchWorld);
+if (index !== -1) {
+    console.log(`${searchWorld}が見つかりました`);
+} else {
+    console.log(`${searchWorld}は見つかりませんでした`);
+}
+
+const str = "にわにはにわにわとりがいる"
+console.log(str.startsWith("にわ"));
+console.log(str.startsWith("いる"));
+console.log(str.endsWith("にわ"));
+console.log(str.endsWith("いる"));
+console.log(str.includes("にわ"));
+console.log(str.includes("いる"));
+
