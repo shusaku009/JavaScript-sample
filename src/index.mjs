@@ -1455,3 +1455,38 @@ const pattern = /\s{3}/;
 
 const spaceCount = 3;
 const pattern = new RegExp(`\\s{${spaceCount}}`);
+
+const str = "ABC123EFG";
+const searchPattern = /\d{3}/;
+console.log(str.search(searchPattern));
+
+const str = "abc123def";
+const searchPattern = /\d+/;
+cosnt index = str.search(searchPattern);
+str.slice(index, index + マッチした文字列の長さ);
+
+console.log("文字列".match(/マッチしないパターン/));
+
+const str = "ABC あいう DE えお";
+const alphabetsPattern = /[a-zA-Z]+/;
+const results = str.match(alphabetsPattern);
+console.log(results.length);
+console.log(results[0]);
+console.log(results.index);
+console.log(results.input);
+
+const str = "ABC あいう DE えお";
+const alphabetsPattern = /[a-zA-Z]+/g;
+const resultsWithG = str.match(alphabetsPattern);
+console.log(resultsWithG.length);
+console.log(resultsWithG[0]);
+console.log(resultsWithG[1]);
+console.log(resultsWithG.index);
+console.log(resultsWithG.input);
+
+const str = "ABC あいう DE えお";
+const alphabetsPattern = /[a-zA-Z]+/g;
+const matchesIterator = str.matchAll(alphabetsPattern);
+for (const match of matchesIterator) {
+    console.log(`match: "${match[0]}", index: ${match.index}, input: "${match.input}"`);
+}
