@@ -1573,3 +1573,20 @@ function toDateJa(dateString) {
 }
 console.log(toDateJa("本日は晴天ナリ"));
 console.log(toDateJa("今日は2017-03-01です"));
+
+function getResource(baseURL, pathname) {
+    const url = baseURL + pathname;
+    console.log(url)
+}
+const baseURL = "http://example.com/resource";
+const pathname = "/example.js";
+getResource(baseURL, pathname);
+
+function getResource(baseURL, pathname) {
+    const url = baseURL + patname;
+    console.log(url);
+}
+
+const baseURL = "http://example.com/resouces/";
+const pathname = "/example.js"
+getResource(baseURL, pathname);
