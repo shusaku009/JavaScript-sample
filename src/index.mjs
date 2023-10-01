@@ -435,13 +435,13 @@ switch (version) {
         break;
 }
 
-let x = 0;
-console.log(`ループ開始前のxの値: ${x}`);
-while (x < 10) {
-    console.log(x);
-    x += 1;
-}
-console.log(`ループ終了後のxの値: ${x}`);
+// let x = 0;
+// console.log(`ループ開始前のxの値: ${x}`);
+// while (x < 10) {
+//     console.log(x);
+//     x += 1;
+// }
+// console.log(`ループ終了後のxの値: ${x}`);
 
 const x = 1000;
 do {
@@ -1502,3 +1502,48 @@ const matchesIterator = "ES2015、ES2016、ES2017".matchAll(pattern);
 for (const match of matchesIterator) {
     console.log(`match: "${match[0]}", capture1: ${match[1]}, index: ${match.index}, input: "${match.input}"`);
 }
+
+const str = "ABC あいう DE えお";
+const alphabetsPattern = /[a-zA-Z]+/;
+const results = alphabetsPattern.exec(str);
+console.log(results.length)
+console.log(results[0]);
+console.log(results.index);
+console.log(results.input);
+
+const str = "ABC あいう DE えお";
+const alphabetsPattern = /[a-zA-Z]+/g;
+console.log(alphabetsPattern.lastIndex);
+const result1 = alphabetsPattern.exec(str);
+console.log(result1[0]);
+console.log(alphabetsPattern.lastIndex);
+const result2 = alphabetsPattern.exec(str);
+console.log(result2[0]);
+console.log(alphabetsPattern.lastIndex);
+const result3 = alphabetsPattern.exec(str);
+console.log(result3);
+console.log(alphabetsPattern.lastIndex);
+
+const str = "ABC あいう DE えお";
+const alphabetsPattern = /[a-zA-Z]+/g;
+let matches;
+while (matches = alphabetsPattern.exec(str)) {
+    console.log(`match: ${matches[0]}, index: ${matches.index}, lastIndex: ${alphabetsPattern.lastIndex}`);
+}
+
+const str = "にわにはにわにわとりがいる";
+console.log(/^にわ/.test(str));
+console.log(/^いる/.test(str));
+console.log(/^にわ$/.test(str));
+console.log(/^いる$/.test(str));
+console.log(/にわ/.test(str));
+console.log(/いる/.test(str));
+
+const str = "/正規表現のような文字列/";
+const regExpLikePattern = /^\/.*\/$/;
+console.log(regExpLikePattern.test(str));
+const isRegExpLikeString = (str) => {
+    return str.startsWith("/") && str.endsWith("/");
+};
+console.log(isRegExpLikeString(str));
+
