@@ -1669,3 +1669,19 @@ const codePoints = convertCodePoints(str);
 console.log(codePoints);
 
 console.log("🍎".length);
+
+const [all, fish] = "𩸽のひらき".match(/(.)のひらき/);
+console.log(all);
+console.log(fish);
+
+const [all, fish] = "𩸽のひらき".match(/(.)のひらき/u);
+console.log(all);
+console.log(fish);
+
+console.log("🍎".length);
+console.log("\uD83C\uDF4E");
+console.log("\uD83C\uDF4E".length);
+
+const codePoints = Array.from("リンゴ🍎");
+console.log(codePoints);
+console.log(codePoints.length);
