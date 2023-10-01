@@ -1565,3 +1565,11 @@ console.log(str.replace("?", "!"));
 console.log(str.replaceAll("?", "!"));
 console.log(str.replace(/\?/g, "?"));
 console.log(str.replaceAll(/\?/g, "!"));
+
+function toDateJa(dateString) {
+    return dateString.replace(/(\d{4})-(\d{2})-(\d{2})/g, (all, year, month, day) => {
+        return `${year}年${month}月${day}日`;
+    });
+}
+console.log(toDateJa("本日は晴天ナリ"));
+console.log(toDateJa("今日は2017-03-01です"));
