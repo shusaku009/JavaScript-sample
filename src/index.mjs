@@ -1703,3 +1703,5 @@ function countOfCodePoints(str, codePoint) {
     return count;
 }
 console.log(countOfCodePoints("🍎🍇🍎🥕🍒", "🍎"));
+
+"string".toUpperCase();
