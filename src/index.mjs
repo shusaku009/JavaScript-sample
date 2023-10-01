@@ -1547,3 +1547,21 @@ const isRegExpLikeString = (str) => {
 };
 console.log(isRegExpLikeString(str));
 
+"use strict";
+const str = "文字列";
+delete str[0];
+
+const str = "文字列";
+const newStr = str.replace("文字", "");
+console.log(newStr);
+
+const str = "にわにはにわにわとりがいる"
+console.log(str.replace("にわ", "niwa"));
+console.log(str.replace(/にわ/, "niwa"));
+console.log(str.replace(/にわ/g, "niwa"));
+
+const str = "???";
+console.log(str.replace("?", "!"));
+console.log(str.replaceAll("?", "!"));
+console.log(str.replace(/\?/g, "?"));
+console.log(str.replaceAll(/\?/g, "!"));
