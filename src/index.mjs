@@ -1620,3 +1620,12 @@ function escapeURL(strings, ...values) {
 const input = "A&B";
 const escapedURL = escapeURL`https://example.com/search?q=${input}&sort=desc`;
 console.log(escapedURL)
+
+console.log("あ".codePointAt(0));
+console.log(String.fromCodePoint(12354));
+console.log(String.fromCodePoint(0x3042));
+
+const codePointOfあ = "あ".codePointAt(0);
+const hexOfあ = codePointOfあ.toString(16);
+console.log(hexOfあ);
+console.log("\u{3042}");
