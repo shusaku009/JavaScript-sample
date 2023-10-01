@@ -1705,3 +1705,11 @@ function countOfCodePoints(str, codePoint) {
 console.log(countOfCodePoints("🍎🍇🍎🥕🍒", "🍎"));
 
 "string".toUpperCase();
+
+const str = new String("input value");
+str.toUpperCase();
+
+const str = "文字列";
+console.log(typeof str);
+const stringWraper = new String("文字列");
+console.log(typeof stringWraper);
