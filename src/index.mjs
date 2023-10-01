@@ -1590,3 +1590,33 @@ function getResource(baseURL, pathname) {
 const baseURL = "http://example.com/resouces/";
 const pathname = "/example.js"
 getResource(baseURL, pathname);
+
+function tag(str) {
+    console.log(str);
+}
+tag(`template ${0} literal ${1}`);
+
+function tag(strings, ...values) {
+    console.log(strings);
+    console.log(values);
+}
+tag `template ${0} literal ${1}`;
+
+function stringRaw(strings, ...values) {
+    return strings.reduce((result, str, i) => {
+        console.log([result, values[i - 1], str]);
+        return result + values[i - 1] + str;
+    });
+}
+console.log(stringRaw`template ${0} literal ${1}`);
+
+console.log(String.raw`template ${0} literal ${1}`);
+
+function escapeURL(strings, ...values) {
+    return strings.reduce((result, str, i) => {
+        return result + encodeURIComponent(values[i - 1]) + str;
+    });
+}
+const input = "A&B";
+const escapedURL = escapeURL`https://example.com/search?q=${input}&sort=desc`;
+console.log(escapedURL)
