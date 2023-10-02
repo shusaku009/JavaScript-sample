@@ -1713,3 +1713,13 @@ const str = "文字列";
 console.log(typeof str);
 const stringWraper = new String("文字列");
 console.log(typeof stringWraper);
+
+const str = "string";
+str.toUpperCase();
+(new String(str)).toUpperCase();
+
+const stringWraper = new String("文字列");
+console.log(stringWraper.valueOf());
+
+const str = "文字列";
+const stringWraper = new String("文字列");
