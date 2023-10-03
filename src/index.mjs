@@ -1764,3 +1764,25 @@ for (const element of array) {
     console.log(element);
 }
 console.log(element);
+
+{
+    const x = "x";
+    {
+        console.log(x);
+    }
+}
+
+{
+    {
+        console.log(xyz);
+    }
+}
+
+{
+    const x = "outer";
+    {
+        const x = "inner";
+        console.log(x);
+    }
+    console.log(x);
+}
