@@ -1823,3 +1823,40 @@ function doHeavyTask() {
 
 }
 measureTask(doHeavyTask);
+
+let let_x;
+var var_x;
+console.log(let_x);
+console.log(var_x);
+let_x = "letのx";
+var_x = "varのx";
+
+console.log(x);
+let x = "letのx";
+
+console.log(x);
+var x = "varのx";
+
+var x;
+console.log(x);
+x = "varのx";
+console.log(x);
+
+function fn() {
+    console.log(x);
+    {
+        var x = "varのx";
+    }
+    console.log(x);
+}
+fn();
+
+function fn() {
+    var x;
+    console.log(x);
+    {
+        x = "varのx";
+    }
+    console.log(x);
+}
+fn();
