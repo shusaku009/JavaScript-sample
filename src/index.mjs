@@ -1860,3 +1860,14 @@ function fn() {
     console.log(x);
 }
 fn();
+
+hello();
+
+function hello(){
+    return "Hello";
+}
+
+hello();
+var hello = function() {
+    return "Hello";
+};
