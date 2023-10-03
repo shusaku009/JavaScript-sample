@@ -1786,3 +1786,40 @@ console.log(element);
     }
     console.log(x);
 }
+
+const x = "x";
+console.log(x);
+
+const globalVariable = "グローバル";
+{
+    console.log(globalVariable);
+}
+function fn() {
+    console.log(globalVariable)
+}
+fn();
+
+console.log(isNaN);
+console.log(Array);
+
+const Array = 1;
+console.log(Array);
+
+function doHeavyTask() {
+
+}
+const startTime = Date.now();
+doHeavyTask();
+const endTime = Date.now();
+console.log(`実行時間は${endTime - startTime}ミリ秒`);
+
+const measureTask = (taskFn) => {
+    const startTime = Date.now();
+    taskFn();
+    const endTime = Date.now();
+    console.log(`実行時間は${endTime - startTime}ミリ秒`);
+};
+function doHeavyTask() {
+
+}
+measureTask(doHeavyTask);
