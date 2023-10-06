@@ -2035,3 +2035,28 @@ const obj = {
     }
 };
 obj.method();
+
+fn();
+obj.method();
+obj1.obj2.method();
+obj1["obj2"]["method"]();
+
+"use strict";
+function fn1() {
+    return this;
+}
+const fn2 = function() {
+    return this;
+};
+console.log(fn1());
+console.log(fn2());
+
+"use strict";
+function outer() {
+    console.log(this);
+    function inner() {
+        console.log(this);
+    }
+    inner();
+}
+outer();
