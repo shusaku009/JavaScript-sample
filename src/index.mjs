@@ -2007,3 +2007,13 @@ countUp.count = 0;
 console.log(countUp());
 countUp.count = 10;
 console.log(countUp());
+
+<script>
+console.log(this);
+</script>
+
+<script type="module">
+console.log(this);
+</script>
+
+console.log(globalThis);
