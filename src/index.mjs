@@ -1928,3 +1928,20 @@ function run() {
 
 printX();
 run();
+
+let x = "before text";
+x = "after text";
+
+function printX() {
+    const x = "X";
+    console.log(x);
+}
+
+printX();
+
+function createArray() {
+    const tempArray = [1, 2, 3];
+    return tempArray;
+}
+const array = createArray();
+console.log(array);
