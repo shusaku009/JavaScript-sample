@@ -2060,3 +2060,33 @@ function outer() {
     inner();
 }
 outer();
+
+const obj = {
+    method1: function() {
+        return this;
+    },
+    method2() {
+        return this;
+    }
+};
+console.log(obj.method1());
+console.log(obj.method2());
+
+const person = {
+    fullName: "Brendan Eich",
+    sayName: function() {
+        return this.fullName;
+    }
+};
+console.log(person.sayName());
+
+const obj1 = {
+    obj2: {
+        obj3: {
+            method() {
+                return this;
+            }
+        }
+    }
+};
+console.log(obj1.obj2.obj3.method() === obj1.obj2.obj3);
