@@ -1914,3 +1914,17 @@ function run() {
 }
 
 run();
+
+let x = 10;
+
+function printX() {
+    console.log(x);
+}
+
+function run() {
+    let x = 20;
+    printX();
+}
+
+printX();
+run();
