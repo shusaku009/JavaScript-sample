@@ -2017,3 +2017,21 @@ console.log(this);
 </script>
 
 console.log(globalThis);
+
+function fn1() {}
+const fn2 = function() {};
+const fn3 = () => {};
+
+function fn() {}
+fn();
+
+const obj = {
+    method() {
+    }
+};
+
+const obj = {
+    method()j {
+    }
+};
+obj.method();
