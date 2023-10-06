@@ -1945,3 +1945,27 @@ function createArray() {
 }
 const array = createArray();
 console.log(array);
+
+const createCounter = () => {
+    let count = 0;
+    return function increment() {
+        count = count + 1;
+        return count;
+    };
+};
+const myCounter = createCounter();
+console.log(myCounter());
+console.log(myCounter());
+
+const createCounter = () => {
+    let count = 0;
+    return function increment() {
+        count = count + 1;
+        return count;
+    };
+};
+const countUp = createCounter();
+const newCountUp = createCounter();
+console.log(countUp === newCountUp);
+console.log(countUp());
+console.log(newCountUp());
