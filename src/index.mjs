@@ -2090,3 +2090,20 @@ const obj1 = {
     }
 };
 console.log(obj1.obj2.obj3.method() === obj1.obj2.obj3);
+
+"use strict";
+const person = {
+    fullName: "Brendan Eich",
+    sayName: function() {
+        return this.fullName;
+    }
+};
+console.log(person.sayName());
+const say = person.sayName;
+say()
+
+"use strict";
+const say = function() {
+    return this.fullName;
+};
+say();
