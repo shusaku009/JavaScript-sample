@@ -2292,3 +2292,19 @@ class Point {
 const point = new Point(3, 4);
 console.log(point);
 console.log(point instanceof Point);
+
+class Thing {}
+const thing = new Thing()
+
+const Point = function PointConstructor(x, y) {
+    this.x = x;
+    this.y = y;
+};
+
+function MyClassLike() {
+}
+MyClassLike();
+
+class MyClass {
+}
+MyClass();
