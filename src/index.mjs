@@ -2472,3 +2472,28 @@ up();
 console.log(counter.count);
 const increment = counter.increment;
 increment();
+
+class ExampleClass {
+    fieldMethod = () => {
+        console.log("クラスフィールドで定義されたメソッド");
+    };
+    constructor() {
+        this.propertyMethod = () => {
+            console.log("インスタンスにプロパティとして定義されたメソッド");
+        };
+    }
+}
+
+class ExampleClass {
+    field = "フィールド";
+    constructor() {
+        this.property = "コンストラクタ";
+    }
+    set field(value) {
+        console.log("filedで定義された値", value);
+    }
+    set property(value) {
+        console.log("constructorで代入された値", value);
+    }
+}
+const example = new ExampleClass();
