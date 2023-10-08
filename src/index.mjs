@@ -2445,3 +2445,30 @@ class Loader {
         this.loadedContent = "読み込んだコンテンツ内容";
     }
 }
+
+class Counter {
+    count = 0;
+    up = this.increment;
+    increment() {
+        this.count++;
+    }
+}
+const counter = new Counter();
+counter.up();
+console.log(counter.count);
+
+class Counter {
+    count = 0;
+    up = () => {
+        this.increment();
+    };
+    increment() {
+        this.count++;
+    }
+}
+const counter = new Counter();
+const up = counter.up;
+up();
+console.log(counter.count);
+const increment = counter.increment;
+increment();
