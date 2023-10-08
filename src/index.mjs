@@ -2225,3 +2225,14 @@ function outer() {
 }
 const innerArrowFunction = outer();
 console.log(innerArrowFunction());
+
+const Prefixer = {
+    prefix: "pre",
+    prefixArray(strings) {
+        return strings.map((str) => {
+            return this.prefix + "-" + str;
+        });
+    }
+};
+const prefixedStrings = Prefixer.prefixArray(["a", "b", "c"]);
+console.log(prefixedStrings);
