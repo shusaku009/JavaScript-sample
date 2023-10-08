@@ -2008,13 +2008,13 @@ console.log(countUp());
 countUp.count = 10;
 console.log(countUp());
 
-<script>
-console.log(this);
-</script>
+// {/* <script>
+// console.log(this);
+// </script>
 
-<script type="module">
-console.log(this);
-</script>
+// <script type="module">
+// console.log(this);
+// </script>  */}
 
 console.log(globalThis);
 
@@ -2031,7 +2031,7 @@ const obj = {
 };
 
 const obj = {
-    method()j {
+    method() {
     }
 };
 obj.method();
@@ -2107,3 +2107,49 @@ const say = function() {
     return this.fullName;
 };
 say();
+
+"use strict";
+function say(message) {
+    return `${message} #{this.fullName}!`;
+}
+const person = {
+    fullName: "Brendan Eich"
+};
+console.log(say.call(person, "こんにちは"));
+say("こんにちは");
+
+"use strict";
+function say(message) {
+    return `${message} ${this.fullName}!`;
+}
+const person = {
+    fullName: "Brendan Eich"
+};
+console.log(say.apply(person, ["こんにちは"]));
+say("こんにちは");
+
+function add(x, y) {
+    return x + y;
+}
+console.log(add.call(null, 1, 2));
+console.log(add.apply(null, [1, 2]));
+
+function say(message) {
+    return `${message} ${this.fullName}!`;
+}
+const person = {
+    fullName: "Brendan Eich"
+};
+const sayPerson = say.bind(person, "こんにちは");
+console.log(sayPerson());
+
+function say(message) {
+    return `${message} ${this.fullName}!`;
+}
+const person = {
+    fullName: "Brendan Eich"
+};
+const sayPerson = () => {
+    return say.call(person, "こんにちは");
+};
+console.log(sayPerson());
