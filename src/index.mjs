@@ -2236,3 +2236,20 @@ const Prefixer = {
 };
 const prefixedStrings = Prefixer.prefixArray(["a", "b", "c"]);
 console.log(prefixedStrings);
+
+const fn = () => {
+    return this;
+};
+console.log(fn());
+console.log(fn.call({}));
+
+const obj = {
+    method() {
+        const arrowFunction = () => {
+            return this;
+        };
+        return arrowFunction();
+    }
+};
+console.log(obj.method());
+console.log(obj.method.call("THAT"));
