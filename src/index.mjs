@@ -2201,3 +2201,27 @@ const Prefixer = {
 };
 const prefixedStrings = Prefixer.prefixArray(["a", "b", "c"]);
 console.log(prefixedStrings);
+
+const fn = () => {
+    return this;
+};
+console.log(fn() === this);
+
+"use strict";
+function outer() {
+    return () => {
+        return this;
+    };
+}
+const innerArrowFunction = outer();
+console.log(innerArrowFunction());
+
+"use strict";
+function outer() {
+    const that = this;
+    return () => {
+        return that;
+    };
+}
+const innerArrowFunction = outer();
+console.log(innerArrowFunction());
