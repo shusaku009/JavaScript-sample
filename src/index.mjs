@@ -2390,3 +2390,58 @@ arrayLike.length = 2;
 console.log(arrayLike.items.join(", "));
 arrayLike.length = 5;
 console.log(arrayLike.items.join(", "));
+
+class Counter {
+    constructor() {
+        this.count++;
+    }
+}
+
+class Counter {
+    count = 0;
+    increment() {
+        this.count++;
+    }
+}
+const counter = new Counter();
+counter.increment();
+console.log(counter.count);
+
+class MyClass {
+    publicField = 1;
+    constructor(arg) {
+        this.property = arg;
+    }
+}
+
+class Myclass {
+    publicField = 1;
+    constructor(arg) {
+        this.property = arg;
+    }
+}
+const myClass = new MyClass(2);
+console.log(myClass.publicField);
+console.log(myClass.property);
+
+class OwnClass {
+    publicField = 1;
+    constructor(arg) {
+        this.publicField = arg;
+    }
+}
+const ownClass = new OwnClass(2);
+console.log(ownClass.publicField);
+
+class Loader {
+    loadedContent;
+    load() {
+        this.loadedCOntent = "読み込んだコンテンツ内容";
+    }
+}
+
+class Loader {
+    load() {
+        this.loadedContent = "読み込んだコンテンツ内容";
+    }
+}
