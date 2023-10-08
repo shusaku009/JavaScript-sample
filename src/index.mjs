@@ -2569,3 +2569,41 @@ class MyClass {
     }
 }
 MyClass.outputPrivate();
+
+class ExampleClass {
+    instanceMethod = () => {
+        console.log("インスタンスメソッド");
+    };
+    prototypeMethod() {
+        console.log("プロトタイプメソッド");
+    }
+}
+const example = new ExampleClass();
+example.instanceMethod();
+example.prototypeMethod();
+
+class ConflictClass {
+    method = () => {
+        console.log("インスタンスオブジェクトのメソッド");
+    };
+    method() {
+        console.log("プロトタイプのメソッド");
+    }
+}
+const conflict = new ConflictClass();
+conflict.method();
+
+class ConflictClass {
+    method = () => {
+        console.log("インスタンスオブジェクトのメソッド");
+    };
+
+    method() {
+        console.log("プロトタイプメソッド");
+    }
+}
+
+const conflict = new ConflictClass();
+conflict.method();
+delete conflict.method;
+conflict.method();
