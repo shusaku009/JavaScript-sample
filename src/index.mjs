@@ -2555,3 +2555,17 @@ const arrayWrapperB = ArrayWrapper.of(1, 2, 3);
 console.log(arrayWrapperA.length);
 console.log(arrayWrapperB.length);
 
+class Colors {
+    static GREEN = "緑";
+    static RED = "赤";
+    static BLUE = "青";
+}
+console.log(Colors.GREEN);
+
+class MyClass {
+    static #privateClassProp = "This is private";
+    static outputPrivate() {
+        console.log(this.#privateClassProp);
+    }
+}
+MyClass.outputPrivate();
