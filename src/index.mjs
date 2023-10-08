@@ -2497,3 +2497,43 @@ class ExampleClass {
     }
 }
 const example = new ExampleClass();
+
+class PrivateExampleClass {
+    #privateField = 42;
+    dump() {
+        console.log(this.#privateField);
+    }
+}
+const privateExample = new PrivateExampleClass();
+privateExample.dump();
+
+class NumberWrapper {
+    _value;
+    constructor(value) {
+        this._value = value;
+    }
+    get value() {
+        return this._value;
+    }
+    set value(newValue) {
+        this._value = newValue;
+    }
+}
+const numberWrapper = new NumberWrapper(1);
+console.log(numberWrapper._value);
+
+class NumberWrapper {
+    #value;
+    constructor(value) {
+        this.#value = value;
+    }
+    get value() {
+        return this.#value;
+    }
+    set value(newValue) {
+        this.#value = newValue;
+    }
+}
+
+const numberWrapper = new NumberWrapper(1);
+console.log(numberWrapper.#value);
