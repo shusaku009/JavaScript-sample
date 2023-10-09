@@ -2738,3 +2738,14 @@ class Child extends Parent {
 }
 const instance = new Child();
 instance.dump();
+
+class Parent {
+    method() {
+        console.log("Parent.prototype.method");
+    }
+}
+class Child extends Parent {
+
+}
+const instance = new Child();
+instance.method();
