@@ -2663,3 +2663,32 @@ if (Object.hasOwn(instance, "method")) {
         prototypeObject.method.call(instance);
     }
 }
+
+class Parent {
+}
+class Child extends Parent {
+}
+const instance = new Child();
+
+class Parent {
+    constructor(...args) {
+        console.log("Parentコンストラクタの処理", ...args);
+    }
+}
+class Child extends Parent {
+    constructor(...args) {
+        super(...args);
+        console.log("Childコンストラクタの処理", ...args);
+    }
+}
+const child = new Child("引数1", "引数2");
+
+class Parent {}
+class Child extends Parent {}
+
+class Parent {}
+class Child extends Parent {
+    constructor(...args) {
+        super(...args);
+    }
+}
