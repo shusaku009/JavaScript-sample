@@ -2757,3 +2757,30 @@ class Parent {
 }
 class Child extends Parent {}
 console.log(Child.hello());
+
+class Parent {
+    method() {
+        console.log("Parent.prototype.method");
+    }
+}
+class Child extends Parent {
+    method() {
+        console.log("Child.prototype.method");
+        super.method();
+    }
+}
+const child = new Child();
+child.method();
+
+class Parent {
+    static method() {
+        console.log("Parent.method");
+    }
+}
+class Child extends Parent {
+    static method() {
+        console.log("Child.method");
+        super.method();
+    }
+}
+Child.method();
