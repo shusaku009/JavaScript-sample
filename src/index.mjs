@@ -2638,3 +2638,28 @@ class MyClass {
 const instance = new MyClass();
 const MyClassPrototype = Object.getPrototypeOf(instance);
 console.log(MyClassPrototype === MyClass.prototype);
+
+class MyClass {
+    method() {
+        console.log("プロトタイプのメソッド");
+    }
+}
+const instance = new MyClass();
+instance.method();
+const Prototype = Object.getPrototypeOf(instance);
+console.log(instance.method === Prototype.method);
+
+class MyClass {
+    method() {
+        console.log("プロトタイプのメソッド");
+    }
+}
+const instance = new MyClass();
+if (Object.hasOwn(instance, "method")) {
+    instance.method();
+} else {
+    const prototypeObject = Object.getPrototypeOf(instance);
+    if (Object.hasOwn(prototypeObject, "method")) {
+        prototypeObject.method.call(instance);
+    }
+}
