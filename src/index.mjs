@@ -2621,3 +2621,11 @@ class MyClass {
 }
 console.log(typeof MyClass.prototype.method === "function");
 console.log(MyClass.prototype.constructor === MyClass);
+
+class MyClass {
+    method() {
+        console.log("プロトタイプメソッド");
+    }
+}
+const instance = new MyClass();
+instance.method();
