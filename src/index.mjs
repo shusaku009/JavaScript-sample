@@ -2895,3 +2895,14 @@ try {
     console.log(error.name);
     console.log(error.message);
 }
+
+function fn() {
+    x++;
+}
+fn();
+
+function fn() {
+    console.log("メッセージ");
+    console.log("エラーメッセージ");
+}
+fn();
