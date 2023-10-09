@@ -2749,3 +2749,11 @@ class Child extends Parent {
 }
 const instance = new Child();
 instance.method();
+
+class Parent {
+    static hello() {
+        return "Hello";
+    }
+}
+class Child extends Parent {}
+console.log(Child.hello());
