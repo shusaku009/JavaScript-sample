@@ -2629,3 +2629,12 @@ class MyClass {
 }
 const instance = new MyClass();
 instance.method();
+
+class MyClass {
+    method() {
+        console.log("プロトタイプのメソッド");
+    }
+}
+const instance = new MyClass();
+const MyClassPrototype = Object.getPrototypeOf(instance);
+console.log(MyClassPrototype === MyClass.prototype);
