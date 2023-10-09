@@ -2708,3 +2708,33 @@ const parent = new Parent();
 console.log(parent.name);
 const child = new Child();
 console.log(child.name);
+
+class Parent {
+    parentField = "親クラスで定義したフィールド";
+}
+class Child extends Parent {
+    childField = "子クラスで定義したフィールド"
+}
+const instance = new Child();
+console.log(instance.parentField);
+console.log(instance.childField);
+
+class Parent {
+    field = "親クラスで定義したフィールド";
+}
+class Child extends Parent {
+    field = "子クラスで定義したフィールド";
+}
+const instance = new Child();
+console.log(instance.field);
+
+class Parent {
+    #parentField = "親クラスで定義したPrivateフィールド";
+}
+class Child extends Parent {
+    dump() {
+        console.log(this.#parentField);
+    }
+}
+const instance = new Child();
+instance.dump();
