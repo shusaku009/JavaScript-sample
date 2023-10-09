@@ -2830,3 +2830,9 @@ try {
 } finally {
     console.log("この行は実行されます");
 }
+
+try {
+    throw new Error("例外が投げられました");
+} catch (error) {
+    console.log(error.message);
+}
