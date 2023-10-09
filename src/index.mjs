@@ -2808,3 +2808,25 @@ const array = MyArray.from([1, 2, 3, 4, 5]);
 console.log(array.length);
 console.log(array.first);
 console.log(array.last);
+
+try {
+    console.log("try節:この行は実行されます");
+    undefindFunction();
+} catch (error) {
+    console.log("catch節:この行は実行されます");
+    console.log(error instanceof ReferenceError);
+    console.log(error.message);
+} finally {
+    console.log("finally節:この行は実行されます");
+}
+
+try {
+    undefinedFunction();
+} catch (error) {
+    console.log(error);
+}
+try {
+    undefinedFunction();
+} finally {
+    console.log("この行は実行されます");
+}
