@@ -2855,3 +2855,19 @@ try {
 } catch (error) {
     console.log(error);
 }
+
+try {
+    console.log(x);
+} catch (error) {
+    console.log(error instanceof ReferenceError);
+    console.log(error.name);
+    console.log(error.message);
+}
+
+try {
+    eval("foo! bar!");
+} catch (error) {
+    console.log(error instanceof SyntaxError);
+    console.log(error.name);
+    console.log(error.message);
+}
