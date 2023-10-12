@@ -2994,3 +2994,13 @@ setTimeout(() => {
     }
 }, 10);
 console.log("この行は実行されます");
+
+function asyncPromiseTask() {
+    return new Promise((resolve, reject) => {
+
+    });
+}
+asyncPromiseTask().then(() => {
+}).catch(() => {
+
+})
