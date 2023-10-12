@@ -2969,3 +2969,28 @@ setTimeout(() => {
 }, 10);
 blockTime(1000);
 taskB();
+
+try {
+    throw new Error("同期的なエラー");
+} catch (error) {
+    console.log("同期的なエラーをキャッチできる");
+}
+console.log("この行は実行されます");
+
+try {
+    setTimeout(() => {
+        throw new Error("非同期的なエラー");
+    }, 10);
+} catch (error) {
+
+}
+console.log("この行は実行されます");
+
+setTimeout(() => {
+    try {
+        throw new Error("エラー");
+    } catch (error) {
+        console.log("エラーをキャッチできる");
+    }
+}, 10);
+console.log("この行は実行されます");
