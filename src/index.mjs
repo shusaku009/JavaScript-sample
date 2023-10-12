@@ -3009,3 +3009,14 @@ const executor = (resolve, reject) => {
 
 };
 const promise = new Promise(executor);
+
+const promise = new Promise((resolve, reject) => {
+
+});
+const onFulfilled = () => {
+    console.log("resolveされた時に呼ばれる");
+};
+const onRejected = () => {
+    console.log("rejectされたときに呼ばれる");
+};
+promise.then(onFulfilled, onRejected);
