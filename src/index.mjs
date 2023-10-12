@@ -3004,3 +3004,8 @@ asyncPromiseTask().then(() => {
 }).catch(() => {
 
 })
+
+const executor = (resolve, reject) => {
+
+};
+const promise = new Promise(executor);
