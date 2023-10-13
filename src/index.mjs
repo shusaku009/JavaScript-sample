@@ -3075,3 +3075,27 @@ function throwPromise() {
 throwPromise().catch(error => {
     console.log(error.message);
 });
+
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve();
+        reject(new Error("エラー"));
+    }, 16);
+});
+promise.then(() => {
+    console.log("Fulfilledとなった");
+}, (error) => {
+
+});
+
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve();
+        resolve();
+    }, 16);
+});
+promise.then(() => {
+    console.log("最初のresolve時に一度だけ呼ばれる");
+}, (error) => {
+
+});
