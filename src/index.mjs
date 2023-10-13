@@ -3427,3 +3427,46 @@ async function exceptionFn() {
 exceptionFn().catch(error => {
     console.log(error.message);
 });
+
+async function asyncMain() {
+    await Promiseインスタンス;
+}
+
+async function doAsync() {
+
+}
+async function asyncMain() {
+    await doAsync();
+    console.log("この行は非同期処理が完了後に実行される");
+}
+
+async function asyncMain() {
+    const value = await Promise.resolve(42);
+    console.log(value);
+}
+asyncMain();
+
+function asyncMain() {
+    return Promise.resolve(42).then(value => {
+        console.log(value);
+    });
+}
+asyncMain();
+
+async function asyncMain() {
+    const value = await Promise.reject(new Error("エラーメッセージ"));
+}
+asyncMain().catch(error => {
+    console.log(error.message);
+});
+
+async function asyncMain() {
+    try {
+        const value = await Promise.reject(new Error("エラーメッセージ"));
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+asyncMain().catch(error => {
+
+});
