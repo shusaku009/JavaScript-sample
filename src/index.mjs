@@ -3133,3 +3133,57 @@ Promise.reject(new Error("エラー")).catch(() => {
     console.log("2. コールバック関数が実行されました");
 });
 console.log("1. 同期的な処理が実行されました");
+
+Promise.resolve()
+    .then(() => {
+        console.log(1);
+    })
+    .then(() => {
+        console.log(2);
+    });
+
+const firstPromise = Promise.resolve();
+const secondPromise = firstPromise.then(() => {
+    console.log(1);
+});
+const thirdPromise = secondPromise.then(() => {
+    console.log(2);
+});
+console.log(firstPromise === secondPromise);
+console.log(secondPromise === thirdPromise);
+
+function asyncTask() {
+    return Math.random() > 0.5
+        ? Promise.resolve("成功")
+        : Promise.reject(new Error("失敗"));
+}
+asyncTask()
+    .then(function onFulfilled(value) {
+        console.log(value);
+    })
+    .catch(function onRejected(error) {
+        console.log(error.message);
+    });
+
+const rejectedPromise = Promise.reject(new Error("失敗"));
+rejectedPromise.then(() => {
+
+}).then(() => {
+
+}).catch(error => {
+    console.log(error.message);
+});
+
+Promise.resolve().then(() => {
+    throw new Error("例外");
+}).then(() => {
+
+}).catch(error => {
+    console.log(error.message);
+});
+
+Promise.reject(new Error("エラー")).catch(error => {
+    console.log(error);
+}).then(() => {
+    console.log("thenのコールバック関数が呼び出される");
+});
