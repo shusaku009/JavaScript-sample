@@ -3230,3 +3230,33 @@ main().catch(error => {
 }).catch(error => {
     console.log("メインの処理が失敗した");
 });
+
+const promise = Math.random() < 0.5 ? Promise.resolve() : Promise.reject();
+promise.then(() => {
+    console.log("Promiseのthenメソッド");
+}).catch((error) => {
+    console.log("Promiseのcatchメソッド");
+}).finally(() => {
+    console.log("Promiseのfinallyメソッド");
+});
+
+function dummyFetch(path) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (path.startsWith("/resource")) {
+                resolve({ body: `Response body of ${path}` });
+            } else {
+                reject(new Error("NOT FOUND"));
+            }
+        }, 1000 * Math.random());
+    });
+}
+let isLoading = true;
+dummyFetch("/resource/A").then(response => {
+    console.log(response);
+}).catch(error => {
+    console.error(error);
+}).finally(() => {
+    isLoading = false;
+    console.log("Promiseのfinallyメソッド");
+});
