@@ -3065,3 +3065,13 @@ errorPromise("thenでエラーハンドリング").then(undefined, (error) => {
 errorPromise("catchでエラーハンドリング").catch(error => {
     console.log(error.message);
 });
+
+function throwPromise() {
+    return new Promise((resolve, reject) => {
+        throw new Error("例外が発生");
+    });
+}
+
+throwPromise().catch(error => {
+    console.log(error.message);
+});
