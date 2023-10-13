@@ -3187,3 +3187,24 @@ Promise.reject(new Error("エラー")).catch(error => {
 }).then(() => {
     console.log("thenのコールバック関数が呼び出される");
 });
+
+Promise.resolve(1).then((value) => {
+    console.log(value);
+    return value * 2;
+}).then(value => {
+    console.log(value);
+    return value * 2;
+}).then(value => {
+    console.log(value);
+}).then(value => {
+    console.log(value);
+});
+
+Promise.reject(new Error("失敗")).catch(error => {
+    return 1;
+}).then(value => {
+    console.log(value);
+    return value * 2;
+}).then(value => {
+    console.log(value);
+});
