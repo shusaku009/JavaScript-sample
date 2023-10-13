@@ -3020,3 +3020,48 @@ const onRejected = () => {
     console.log("rejectされたときに呼ばれる");
 };
 promise.then(onFulfilled, onRejected);
+
+function dummyFetch(path) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (path.startsWith("/success")) {
+                resolve({ body: `Response body of ${path}` });
+            } else {
+                reject(new Error("NOT FOUND"));
+            }
+        }, 1000 * Math.random());
+    });
+}
+dummyFetch("/success/data").then(function onFulfilled(response) {
+    console.log(response);
+}, function onRejected(error) {
+
+});
+dummyFetch("/failure/data").then(function onFulfilled(response) {
+
+}, function onRejected(error) {
+    console.error(error);
+});
+
+function delay(timeoutMs) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve();
+        }, timeoutMs);
+    });
+}
+delay(10).then(() => {
+    console.log("10ミリ秒後に呼ばれる");
+});
+
+function errorPromise(message) {
+    return new Promise((resolve, reject) => {
+        reject(new Error(message));
+    });
+}
+errorPromise("thenでエラーハンドリング").then(undefined, (error) => {
+    console.log(error.message);
+});
+errorPromise("catchでエラーハンドリング").catch(error => {
+    console.log(error.message);
+});
