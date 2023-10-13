@@ -3099,3 +3099,26 @@ promise.then(() => {
 }, (error) => {
 
 });
+
+const fulfilledPromise = Promise.resolve();
+
+const fulfilledPromise = new Promise((resolve) => {
+    resolve();
+});
+
+const fulfilledPromise = Promise.resolve(42);
+fulfilledPromise.then(value => {
+    console.log(value);
+});
+
+const promise = Promise.resolve();
+promise.then(() => {
+    console.log("2. コールバック関数が実行されました");
+});
+console.log("1. 同期的な処理が実行されました");
+
+const promise = new Promise((resolve) => {
+    console.log("1. resolveします");
+    resolve();
+});
+console.log("2. 同期的な処理が実行されました");
