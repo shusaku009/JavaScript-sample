@@ -3399,3 +3399,8 @@ function doAsync() {
 doAsync().then(value => {
     console.log(value);
 });
+
+async function fn1() {}
+const fn2 = async function() {};
+const fn3 = async() => {};
+const obj = { async method() {} };
