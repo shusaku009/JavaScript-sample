@@ -3404,3 +3404,26 @@ async function fn1() {}
 const fn2 = async function() {};
 const fn3 = async() => {};
 const obj = { async method() {} };
+
+async function resolveFn() {
+    return "返り値";
+}
+resolveFn().then(value => {
+    console.log(value);
+});
+
+async function rejectFn() {
+    return Promise.reject(new Error("エラーメッセージ"));
+}
+
+rejectFn().catch(error => {
+    console.log(error.message);
+});
+
+async function exceptionFn() {
+    throw new Error("例外が発生しました");
+}
+
+exceptionFn().catch(error => {
+    console.log(error.message);
+});
