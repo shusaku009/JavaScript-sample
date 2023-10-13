@@ -3282,3 +3282,61 @@ dummyFetch("/resource/A").then(response => {
 }).then(() => {
     console.log(results);
 });
+
+function delay(timeoutMs) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(timeoutMs);
+        }, timeoutMs);
+    });
+}
+const promise1 = delay(1);
+const promise2 = delay(2);
+const promise3 = delay(3);
+
+Promise.all([promise1, promise2, promise3]).then(function(values) {
+    console.log(values);
+});
+
+function dummyFetch(path) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (path.startsWith("/resource")) {
+                resolve({ body: `Response body of ${path}` });
+            } else {
+                reject(new Error("NOT FOUND"));
+            }
+        }, 1000 * Math.random());
+    });
+}
+
+const fetchedPromise = Promise.all([
+    dummyFetch("/resource/A"),
+    dummyFetch("/resource/B")
+]);
+fetchedPromise.then(([responseA, responseB]) => {
+    console.log(responseA.body);
+    console.log(responseB.body);
+});
+
+function dummyFetch(path) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (path.startsWith("/resource")) {
+                resolve({ body: `Response body of ${path}` });
+            } else {
+                reject(new Error("NOT FOUND"));
+            }
+        }, 1000 * Math.random());
+    });
+}
+
+const fetchedPromise = Promise.all([
+    dummyFetch("/resource/A"),
+    dummyFetch("/not_found/B")
+]);
+fetchedPromise.then(([responseA, responseB]) => {
+
+}).catch(error => {
+    console.log(error);
+});
