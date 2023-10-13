@@ -3385,3 +3385,17 @@ Promise.race([
 }).catch(error => {
     console.log(error.message);
 });
+
+async function doAsync() {
+    return "値";
+}
+doAsync().then(value => {
+    console.log(value);
+});
+
+function doAsync() {
+    return Promise.resolve("値");
+}
+doAsync().then(value => {
+    console.log(value);
+});
