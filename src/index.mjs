@@ -3208,3 +3208,25 @@ Promise.reject(new Error("失敗")).catch(error => {
 }).then(value => {
     console.log(value);
 });
+
+Promise.resolve().then(function onFulfilledA() {
+    return Promise.reject(new Error("失敗"));
+}).then(function onFulfilledB() {
+
+}).catch(function onRejected(error) {
+    console.log(error.message);
+}).then(function onFulfilledC() {
+    console.log("onFulfilledCは呼び出されます");
+});
+
+function main() {
+    return Promise.reject(new Error("エラー"));
+}
+main().catch(error => {
+    console.error(error);
+    return Promise.reject(error);
+}).then(() => {
+
+}).catch(error => {
+    console.log("メインの処理が失敗した");
+});
