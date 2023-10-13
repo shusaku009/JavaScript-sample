@@ -3260,3 +3260,25 @@ dummyFetch("/resource/A").then(response => {
     isLoading = false;
     console.log("Promiseのfinallyメソッド");
 });
+
+function dummyFetch(path) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (path.startsWith("/resource")) {
+                resolve({ body: `Response body of ${path}` });
+            } else {
+                reject(new Error("NOT FOUND"));
+            }
+        }, 1000 * Math.random());
+    });
+}
+
+const results = [];
+dummyFetch("/resource/A").then(response => {
+    results.push(response.body);
+    return dummyFetch("/resource/B");
+}).then(response => {
+    results.push(response.body);
+}).then(() => {
+    console.log(results);
+});
