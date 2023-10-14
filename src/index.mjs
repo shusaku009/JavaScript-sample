@@ -3518,3 +3518,31 @@ async function fetchAB() {
 fetchAB().then((results) => {
     console.log(results);
 });
+
+function dummyFetch(path) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (path.startsWith("/resource")) {
+                resolve({ body: `Response body of ${path}` })
+            } else {
+                reject(new Error("NOT FOUND"));
+            }
+        }, 1000 * Math.random());
+    });
+}
+
+async function fetchResources(resources) {
+    const results = [];
+    for (const resouirce of resources) {
+        const response = await dummyFetch(resouirce);
+        results.push(response.body);
+    }
+    return results;
+}
+const resources = [
+    "/resource/A",
+    "/resource/B"
+];
+fetchResources(resources).then((results) => {
+    console.log(results);
+});
