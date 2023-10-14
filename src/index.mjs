@@ -3651,3 +3651,8 @@ fetchResources(resources).then((results) => {
     console.log("4.fetchResourcesの結果を取得");
     console.log(results);
 });
+
+console.log("実行開始");
+const startTime = Date.now();
+await new Promise(resolve => setTimeout(resolev, 1000));
+console.log(`実行終了: ${Date.now() - statTime}ms 経過しました`);
