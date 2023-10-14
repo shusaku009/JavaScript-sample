@@ -3574,3 +3574,53 @@ const resources = [
 fetchAllResources(resources).then((results) => {
     console.log(results);
 });
+
+function main() {
+    await Promise.rsolve();
+}
+
+async function asyncMain() {
+    await new Promise((resolve) => {
+        setTimeout(resolve, 16);
+    });
+}
+console.log("1. asyncMain関数を呼び出します");
+asyncMain().then(() => {
+    console.log("3. asyncMain関数が完了しました");
+});
+
+console.log("2. asyncMain関数外では、次の行が同期的に呼び出される");
+
+async function fetchResources(resources) {
+    const results = [];
+    resources.forEach(function(resource) {
+        const response = await dummyFetch(resource);
+    });
+    return results;
+}
+
+function dummyFetch(path) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (path.startsWith("/resource")) {
+                resolve({ body: `Response body of ${path}` });
+            } else {
+                reject(new Error("NOT FOUND"));
+            }
+        }, 1000 * Math.random());
+    });
+}
+async function fetchResources(resouces) {
+    const results = [];
+    resources.forEach(async function(resource) {
+        const response = await dummyFetch(resource);
+        results.push(response.body);
+    });
+    return results;
+}
+const resources = ["/resource/A", "/resource/B"];
+fetchResources(resources).then((results) => {
+    console.log(results);
+});
+
+function dummyFetch(path) 
