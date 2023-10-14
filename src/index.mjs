@@ -3546,3 +3546,31 @@ const resources = [
 fetchResources(resources).then((results) => {
     console.log(results);
 });
+
+function dummyFetch(path) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (path.startWith("/resource")) {
+                resolve({ body: `Response body of ${path}` });
+            } else {
+                reject(new Error("NOT FOUND"));
+            }
+        }, 1000 * Math.random());
+    });
+}
+async function fetchAllResouirces(resouces) {
+    const promises = resources.map((resource) => {
+        return dummyFetch(resource);
+    });
+    const responses = await Promise.all(promises);
+    return responses.map((response) => {
+        return response.body;
+    });
+}
+const resources = [
+    "/resource/A",
+    "/resource/B"
+];
+fetchAllResources(resources).then((results) => {
+    console.log(results);
+});
