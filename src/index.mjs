@@ -3964,3 +3964,10 @@ function getRandom(min, max) {
     return Math.random() * (max - min) + min;
 }
 console.log(getRandom(1, 5));
+
+console.log(Math.max(1, 10));
+console.log(Math.min(1, 10));
+
+const numbers = [1, 2, 3, 4, 5];
+console.log(Math.max(...numbers));
+console.log(Math.min(...numbers));
