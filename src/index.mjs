@@ -3680,3 +3680,33 @@ map.delete("key1");
 console.log(map.size);
 map.clear();
 console.log(map.size);
+
+const map = new Map([["key1", "value1"], ["key2", "value2"]]);
+const results = [];
+map.forEach((value, key) => {
+    results.push(`${key}:${value}`);
+});
+console.log(results);
+
+const map = new Map([["key1", "value1"], ["key2", "value2"]]);
+const keys = [];
+for (const key of map.keys()) {
+    keys.push(key);
+}
+console.log(keys);
+const keysArray = Array.from(map.keys());
+console.log(keysArray);
+
+const map = new Map([["key1", "value1"], ["key2", "value2"]]);
+const entries = [];
+for (const [key, value] of map.entries()) {
+    entries.push(`${key}:${value}`);
+}
+console.log(entries);
+
+const map = new Map([["key1", "value1"], ["key2", "value2"]]);
+const results = [];
+for (const [key, value] of map) {
+    results.push(`${key}:${value}`);
+}
+console.log(results);
