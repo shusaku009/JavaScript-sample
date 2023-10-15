@@ -3982,3 +3982,15 @@ console.log(Math.round(-1.3));
 
 console.log(Math.trunc(1.3));
 console.log(Math.trunc(-1.3));
+
+const foo = "foo";
+export { foo };
+
+export function bar() { };
+
+export const foo = "foo";
+export function bar() { }
+
+import { foo, bar } from "./my-module.js";
+console.log(foo);
+console.log(bar);
