@@ -3971,3 +3971,14 @@ console.log(Math.min(1, 10));
 const numbers = [1, 2, 3, 4, 5];
 console.log(Math.max(...numbers));
 console.log(Math.min(...numbers));
+
+console.log(Math.floor(1.3));
+console.log(Math.floor(-1.3));
+console.log(Math.ceil(1.3));
+console.log(Math.ceil(-1.3));
+console.log(Math.round(1.3));
+console.log(Math.round(1.6));
+console.log(Math.round(-1.3));
+
+console.log(Math.trunc(1.3));
+console.log(Math.trunc(-1.3));
