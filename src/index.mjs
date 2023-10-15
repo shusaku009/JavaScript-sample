@@ -3955,3 +3955,12 @@ console.log(future.fomat("YYYY/MM/DD HH:mm"));
 const rad90 = Math.PI * 90 / 180;
 const sin90 = Math.sin(rad90);
 console.log(sin90);
+
+for (let i = 0; i < 5; i++) {
+    console.log(Math.random());
+}
+
+function getRandom(min, max) {
+    return Math.random() * (max - min) + min;
+}
+console.log(getRandom(1, 5));
