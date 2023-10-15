@@ -3810,3 +3810,12 @@ console.log(set.size);
 
 const set = new Set(["value1", "value2", "value2"]);
 console.log(set.size);
+
+const set = new Set();
+set.add("a");
+set.add("b");
+console.log(set.size);
+set.delete("a");
+console.log(set.size);
+set.clear();
+console.log(set.size);
