@@ -3947,3 +3947,7 @@ console.log(formatDate(date));
 const now = new Date();
 const timezoneOffsetInHours = now.getTimezoneOffset() / 60;
 console.log(`Hours in UTC: ${now.getHours() + timezoneOffsetInHours}`);
+
+const now = dayjs();
+const future = now.add(10, "minute");
+console.log(future.fomat("YYYY/MM/DD HH:mm"));
