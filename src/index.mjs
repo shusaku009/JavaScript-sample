@@ -3909,3 +3909,9 @@ const obj = {
 };
 console.log(JSON.stringify(obj));
 console.log(JSON.stringify({ x: obj }));
+
+const now = new Date();
+console.log(Date.now());
+
+console.log(now.getTime());
+console.log(now.toISOString());
