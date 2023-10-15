@@ -3804,3 +3804,9 @@ map.set(NaN, "value");
 console.log(NaN === NaN);
 console.log(map.has(NaN));
 console.log(map.get(NaN));
+
+const set = new Set();
+console.log(set.size);
+
+const set = new Set(["value1", "value2", "value2"]);
+console.log(set.size);
