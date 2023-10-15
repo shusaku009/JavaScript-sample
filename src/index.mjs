@@ -3766,3 +3766,35 @@ function onLoginFormsSubmit(event) {
     };
     sendPOSTRequest("/api/login", data)
 }
+
+const map = new WeakMap();
+let obj = {};
+map.set(obj, "value");
+obj = null;
+
+const listenerMap = new WeakMap();
+
+class EventEmitter {
+    addListener(listener) {
+        const listeners = listenerMap.get(this) ?? [];
+        const newListeners = listeners.concat(listener);
+        listenerMap.set(this, newListeners);
+    }
+}
+let event = new EventEmitter();
+event.addListener();
+event.addListener(() => {
+
+});
+event = null;
+
+const cache = new WeakMap();
+
+function getHeight(element) {
+    if (cache.has(element)) {
+        return cache.get(element);
+    }
+    const height = element.getBoundingClientRect().height;
+    cache.set(element, height);
+    return height;
+}
