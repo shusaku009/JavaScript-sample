@@ -3798,3 +3798,9 @@ function getHeight(element) {
     cache.set(element, height);
     return height;
 }
+
+const map = new Map();
+map.set(NaN, "value");
+console.log(NaN === NaN);
+console.log(map.has(NaN));
+console.log(map.get(NaN));
