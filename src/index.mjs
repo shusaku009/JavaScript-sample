@@ -3656,3 +3656,9 @@ console.log("実行開始");
 const startTime = Date.now();
 await new Promise(resolve => setTimeout(resolev, 1000));
 console.log(`実行終了: ${Date.now() - statTime}ms 経過しました`);
+
+const map = new Map();
+console.log(map.size);
+
+const map = new Map([["key1", "value1"], ["key2", "value2"]]);
+console.log(map.size);
