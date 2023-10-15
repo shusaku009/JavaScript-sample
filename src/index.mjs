@@ -3819,3 +3819,29 @@ set.delete("a");
 console.log(set.size);
 set.clear();
 console.log(set.size);
+
+const set = new Set(["a", "b"]);
+const results = [];
+set.forEach((value) => {
+    results.push(value);
+});
+console.log(results);
+
+const set = new Set(["a", "b"]);
+const keysResults = [];
+for (const value of set.keys()) {
+    keysResults.push(value);
+}
+console.log(keysResults);
+const entryResults = [];
+for (const entry of set.entries()) {
+    entryResults.push(entry);
+}
+console.log(entryResults);
+
+const set = new Set(["a", "b"]);
+const results = [];
+for (const value of set) {
+    results.push(value);
+}
+console.log(results);
