@@ -3951,3 +3951,7 @@ console.log(`Hours in UTC: ${now.getHours() + timezoneOffsetInHours}`);
 const now = dayjs();
 const future = now.add(10, "minute");
 console.log(future.fomat("YYYY/MM/DD HH:mm"));
+
+const rad90 = Math.PI * 90 / 180;
+const sin90 = Math.sin(rad90);
+console.log(sin90);
