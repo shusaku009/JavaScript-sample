@@ -3662,3 +3662,21 @@ console.log(map.size);
 
 const map = new Map([["key1", "value1"], ["key2", "value2"]]);
 console.log(map.size);
+
+const map = new Map();
+map.set("key", "value1");
+console.log(map.size);
+console.log(map.get("key"));
+map.set("key", "value2");
+console.log(map.get("key"));
+console.log(map.has("key"));
+console.log(map.has("foo"));
+
+const map = new Map();
+map.set("key1", "value1");
+map.set("key2", "value2");
+console.log(map.size);
+map.delete("key1");
+console.log(map.size);
+map.clear();
+console.log(map.size);
